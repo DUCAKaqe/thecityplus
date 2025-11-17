@@ -1,0 +1,23 @@
+<svg width="900" height="560" viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="delhiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff5d9" />
+      <stop offset="100%" stop-color="#f1f5ff" />
+    </linearGradient>
+    <linearGradient id="river" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c6edff" />
+      <stop offset="100%" stop-color="#9ac7ff" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#343a40" flood-opacity="0.15" />
+    </filter>
+  </defs>
+  <rect width="900" height="560" rx="48" fill="#fefcf7" />
+  <path d="M150 130 C220 40, 420 30, 510 120 C600 210, 760 160, 780 250 C800 340, 720 420, 640 470 C560 520, 360 510, 300 440 C240 370, 80 360, 80 270 C80 180, 120 150, 150 130 Z" fill="url(#delhiGradient)" filter="url(#shadow)" />
+  <path d="M670 40 C640 160, 640 320, 650 500" stroke="url(#river)" stroke-width="28" stroke-linecap="round" opacity="0.8" />
+  <circle cx="360" cy="180" r="35" fill="#ffe0b2" opacity="0.7" />
+  <circle cx="520" cy="320" r="28" fill="#ffd3e2" opacity="0.7" />
+  <circle cx="260" cy="320" r="22" fill="#d6f5df" opacity="0.7" />
+  <circle cx="620" cy="210" r="18" fill="#d9e9ff" opacity="0.7" />
+  <text x="110" y="520" font-family="'Plus Jakarta Sans', sans-serif" font-size="32" fill="#c6c1b5">Delhi NCR · Static Map</text>
+</svg>

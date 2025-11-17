@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CityPulse • Interactive Map</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body data-page="map">
+    <header class="app-shell">
+      <div class="brand">
+        <div class="brand-mark">CP</div>
+        <div>
+          <p class="eyebrow">CityPulse</p>
+          <p class="brand-subtitle">Smart City Insight</p>
+        </div>
+      </div>
+      <button class="mobile-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="alerts.html">Alerts</a>
+        <a class="is-active" href="map.html">Map</a>
+        <a href="connect.html">Connect</a>
+      </nav>
+    </header>
+
+    <main class="page page--map">
+      <section class="hero hero--split">
+        <div class="hero-text">
+          <p class="eyebrow">Interactive City Map</p>
+          <h1>Explore Delhi NCR civic zones</h1>
+          <p class="muted">
+            Hover to highlight districts, click to open service details and contacts across the capital region.
+          </p>
+          <div class="focus-strip" aria-live="polite">
+            <div>
+              <span>City</span>
+              <strong id="mapCityName">Delhi NCR, India</strong>
+            </div>
+            <div>
+              <span>Coordinates</span>
+              <strong id="mapCoordinates">28.6139°N, 77.2090°E</strong>
+            </div>
+            <div>
+              <span>Timezone</span>
+              <strong id="mapTimezone">IST (UTC+5:30)</strong>
+            </div>
+            <div>
+              <span>Population</span>
+              <strong id="mapPopulation">32 M</strong>
+            </div>
+            <div>
+              <span>Area</span>
+              <strong id="mapArea">1,484 km²</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="map-categories" id="categoryRow"></section>
+
+      <section class="map-toolbar">
+        <div class="search-field">
+          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <path
+              d="M13.5 12h-.79l-.28-.27a6 6 0 10-.71.71l.27.28v.79L17 18.5 18.5 17l-5-5zM8.5 12a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"
+              fill="currentColor"
+            />
+          </svg>
+          <input type="search" id="zoneSearch" placeholder="Search landmark, facility, or district" aria-label="Search zones" />
+        </div>
+        <div class="toolbar-buttons">
+          <button class="ghost" id="historyButton">History</button>
+        </div>
+      </section>
+
+      <section class="map-grid" id="mapGrid">
+        <div class="map-view" id="mapView">
+          <div class="city-map" id="cityMap" role="img" aria-label="City zones map">
+            <img src="assets/img/delhi-map.png" alt="Delhi NCR map overview" class="map-image" />
+          </div>
+          <div class="map-overlay" id="activeZoneCard">
+            <p class="muted">Select a zone to see quick details.</p>
+          </div>
+          <div class="pin-overlay" id="pinOverlay" aria-live="polite"></div>
+          <div class="zoom-controls" aria-hidden="true">
+            <button type="button">+</button>
+            <button type="button">−</button>
+          </div>
+        </div>
+        <aside class="card zone-history" id="zoneHistoryPanel" hidden>
+          <header>
+            <div>
+              <p class="eyebrow">Locations</p>
+              <h2>Locations</h2>
+            </div>
+            <p class="muted" id="historyCount">0</p>
+          </header>
+          <ul id="zoneHistory"></ul>
+        </aside>
+      </section>
+    </main>
+
+    <div class="modal" id="zoneModal" aria-hidden="true" role="dialog" aria-labelledby="zoneTitle">
+      <div class="modal-panel">
+        <button class="ghost close-modal" aria-label="Close details">&times;</button>
+        <p class="eyebrow" id="zoneType">Zone Type</p>
+        <h2 id="zoneTitle">Zone title</h2>
+        <p class="muted" id="zoneDescription"></p>
+        <ul class="zone-meta" id="zoneMeta"></ul>
+      </div>
+    </div>
+
+    <footer class="app-footer">
+      <p>© <span id="year"></span> CityPulse · Smart living insights</p>
+      <div class="footer-links">
+        <a href="connect.html">Support</a>
+        <a href="alerts.html">Alerts</a>
+      </div>
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

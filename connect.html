@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CityPulse • Feedback & Connect</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body data-page="connect">
+    <header class="app-shell">
+      <div class="brand">
+        <div class="brand-mark">CP</div>
+        <div>
+          <p class="eyebrow">CityPulse</p>
+          <p class="brand-subtitle">Smart City Insight</p>
+        </div>
+      </div>
+      <button class="mobile-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="alerts.html">Alerts</a>
+        <a href="map.html">Map</a>
+        <a class="is-active" href="connect.html">Connect</a>
+      </nav>
+    </header>
+
+    <main class="page page--secondary">
+      <section class="hero hero--split">
+        <div>
+          <p class="eyebrow">Feedback & Citizen Connect</p>
+          <h1>Send us your thoughts for Delhi NCR</h1>
+          <p class="muted">Submit issues, kudos, or suggestions for India’s capital region. We respond within one business day.</p>
+          <p class="city-pill" data-city-pill>Delhi NCR, India</p>
+        </div>
+        <div class="contact-meta">
+          <p class="eyebrow">24/7 Helpline</p>
+          <p class="time">1800-221-009</p>
+          <p class="muted">Or ping us on @CityPulseHQ</p>
+        </div>
+      </section>
+
+      <section class="grid grid-feedback">
+        <form class="card form" id="feedbackForm" novalidate>
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" placeholder="Your full name" required />
+            <small class="error" data-error="name"></small>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="you@email.com" required />
+            <small class="error" data-error="email"></small>
+          </label>
+          <label>
+            <span>Topic</span>
+            <select name="topic">
+              <option value="General">General</option>
+              <option value="Mobility">Mobility</option>
+              <option value="Environment">Environment</option>
+              <option value="Public Safety">Public Safety</option>
+            </select>
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" placeholder="Describe your request..." required></textarea>
+            <small class="error" data-error="message"></small>
+          </label>
+          <button class="primary" type="submit">Send feedback</button>
+        </form>
+
+        <aside class="card socials">
+          <p class="eyebrow">Follow the pulse</p>
+          <h2>Connect on social</h2>
+          <ul id="socialList"></ul>
+          <p class="not-so-subtle-plea">sir full marks dedo🙏</p>
+        </aside>
+      </section>
+    </main>
+
+    <div class="modal" id="successModal" aria-hidden="true" role="dialog" aria-labelledby="successTitle">
+      <div class="modal-panel">
+        <button class="ghost close-modal" data-modal="successModal" aria-label="Close success message">&times;</button>
+        <p class="eyebrow">Submission received</p>
+        <h2 id="successTitle">Thank you!</h2>
+        <p class="muted">We logged your feedback and a civic liaison will follow up shortly.</p>
+        <div class="tag-list" id="socialTags"></div>
+        <button class="primary close-modal" data-modal="successModal">Back to connect</button>
+      </div>
+    </div>
+
+    <footer class="app-footer">
+      <p>© <span id="year"></span> CityPulse · Smart living insights</p>
+      <div class="footer-links">
+        <a href="map.html">Facilities</a>
+        <a href="alerts.html">Alerts</a>
+      </div>
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

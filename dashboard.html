@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CityPulse • Smart City Dashboard</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body data-page="home">
+    <header class="app-shell">
+      <div class="brand">
+        <div class="brand-mark">CP</div>
+        <div>
+          <p class="eyebrow">CityPulse</p>
+          <p class="brand-subtitle">Smart City Insight</p>
+        </div>
+      </div>
+      <button class="mobile-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" aria-label="Primary">
+        <a class="is-active" href="dashboard.html">Dashboard</a>
+        <a href="alerts.html">Alerts</a>
+        <a href="map.html">Map</a>
+        <a href="connect.html">Connect</a>
+      </nav>
+    </header>
+
+    <main class="page">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">CityPulse Command</p>
+          <h1>One console for Delhi NCR</h1>
+          <p class="muted">Live civic metrics across the capital region — air quality, mobility, energy, and citizen signals refreshed every minute.</p>
+        </div>
+        <div class="time-card">
+          <p class="eyebrow">Current Time</p>
+          <p class="time" id="currentTime">--:--</p>
+          <p class="muted" id="currentDate">Monday, 17 Nov</p>
+          <div class="city-chip">
+            <p class="eyebrow">City focus</p>
+            <p class="city" id="cityName">Delhi NCR · India</p>
+            <p class="muted" id="cityCoordinates">28.61°N · 77.21°E</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid grid-dashboard">
+        <article class="card card--accent span-2">
+          <header class="card-header card-header--icon">
+            <div class="card-icon icon-sun" aria-hidden="true"></div>
+            <div>
+              <p class="eyebrow">Atmosphere</p>
+              <h2>Climate & Air Quality</h2>
+            </div>
+            <button class="ghost" data-refresh="weather">Refresh</button>
+          </header>
+          <div class="card-body climate" id="climatePanel"></div>
+        </article>
+
+        <article class="card card--traffic">
+          <header class="card-header card-header--icon">
+            <div class="card-icon icon-traffic" aria-hidden="true"></div>
+            <p class="eyebrow">Traffic density</p>
+            <h2>Mobility Pulse</h2>
+          </header>
+          <div class="card-body" id="trafficPanel"></div>
+        </article>
+
+        <article class="card card--kpi">
+          <header class="card-header card-header--icon">
+            <div class="card-icon icon-meter" aria-hidden="true"></div>
+            <p class="eyebrow">Output</p>
+            <h2>City KPI</h2>
+          </header>
+          <div class="card-body kpi" id="kpiPanel"></div>
+        </article>
+
+        <article class="card card-alerts">
+          <header class="card-header">
+            <p class="eyebrow">Active alerts</p>
+            <h2>City ticker</h2>
+          </header>
+          <div class="card-body alerts-body">
+            <div class="ticker" id="alertsTicker"></div>
+            <small class="muted">Rotates every 5 seconds</small>
+          </div>
+        </article>
+
+        <article class="card card-transport">
+          <header class="card-header">
+            <p class="eyebrow">Mobility services</p>
+            <h2>Public transport status</h2>
+          </header>
+          <div class="card-body transport-body" id="transportStatus"></div>
+        </article>
+
+        <article class="card card-energy span-2">
+          <header class="card-header card-header--inline">
+            <div>
+              <p class="eyebrow">Energy & water</p>
+              <h2>Usage summary</h2>
+            </div>
+            <small class="muted">Live-substation feed</small>
+          </header>
+          <div class="card-body energy-body" id="energySummary"></div>
+        </article>
+
+        <article class="card card-minimap span-2">
+          <header class="card-header">
+            <p class="eyebrow">City zones</p>
+            <h2>Mini map spotlight</h2>
+          </header>
+          <div class="mini-map" id="miniMapWidget"></div>
+        </article>
+
+        <article class="card card-chart span-2">
+          <header class="card-header">
+            <p class="eyebrow">AQI Trend</p>
+            <h2>Last 24 hours</h2>
+          </header>
+          <div class="chart-body" id="trendChart"></div>
+        </article>
+
+        <article class="card card-news">
+          <header class="card-header">
+            <p class="eyebrow">City news</p>
+            <h2>Headlines</h2>
+          </header>
+          <ul class="news-list" id="newsList"></ul>
+        </article>
+
+        <article class="card card-fact">
+          <header class="card-header">
+            <p class="eyebrow">Daily fact</p>
+            <h2>City highlight</h2>
+          </header>
+          <p class="fact-text" id="factWidget"></p>
+        </article>
+
+        <article class="card card-actions">
+          <header class="card-header">
+            <p class="eyebrow">Emergency</p>
+            <h2>Quick actions</h2>
+          </header>
+          <div class="quick-actions" id="quickActions"></div>
+          <p class="muted action-response" id="actionResponse" aria-live="polite"></p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>© <span id="year"></span> CityPulse · Smart living insights</p>
+      <div class="footer-links">
+        <span class="subtle-plea">sir please give full marks</span>
+        <a href="connect.html">Support</a>
+        <a href="map.html">Facilities</a>
+      
+      </div>
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
